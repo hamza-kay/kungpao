@@ -23,16 +23,16 @@
 
  
 
-  --color-accent:       #E9421E;   /* Red from logo and headings */
-  --color-secondary:    #E3C152;   /* Darker yellow for section headers */
-  --color-highlight:    #F6E1A3;   /* Light yellow highlight box */
-  --color-muted:        #8B8470;   /* Muted/sides text */
-  --color-background:   #FDF6E2;   /* Main background (beige/bone) */
-  --color-light:        #FFFFFF;   /* True white for highlights, panda, etc. */
-  --color-destructive:  #E9421E;   /* Same as accent (red) */
-  --color-card-bg:      #F6E1A3;   /* Light yellow (same as highlight, for cards) */
-  --color-card-border:  #E3C152;   /* Yellow border for boxes */
-  --color-inactive:     #ADA28E;   /* Muted inactive nav, lighter muted */
+--color-accent:       #E9421E;   /* Red from logo, for buttons/active */
+  --color-secondary:    #2D2A21;   /* Deep brown/black for headings */
+  --color-highlight:    #F6E1A3;   /* Light yellow, for box backgrounds ONLY */
+  --color-muted:        #8B8470;   /* Muted text */
+  --color-background:   #FDF6E2;   /* Main page background (cream, *not* yellow) */
+  --color-light:        #FFFFFF;   /* Pure white, for highlights/panda etc. */
+  --color-destructive:  #E9421E;   /* Same as accent */
+  --color-card-bg:      #FFFFFF;   /* Card background (white) */
+  --color-card-border:  #E3C152;   /* Border for highlight boxes, not cards */
+  --color-inactive:     #ADA28E;   /* Inactive nav, muted */
   --color-skeleton:     #E3C152;   /* For skeleton loaders, use yellow */
 
   
