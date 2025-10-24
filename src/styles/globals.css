@@ -22,25 +22,20 @@
   /* --color-destructive: #0C5AA4;  */
 
  
-  /* smashbros branding */
-  /* --color-accent:         #E74C3C;   From: red primary */
-  --color-accent:         #F1C40F;   /* From: yellow primary */
-  --color-secondary:      #C6C8CE;   /* This wasn't directly in the HTML config, so kept your subtle light gray for muted/inactive nav */
-  /* --color-highlight:      #E74C3C;   Same as accent (primary red) */
-  --color-highlight:      #F1C40F;   /* Same as accent (primary yellow) */
-  
-  
-  --color-muted:          #A6A8AD;   /* text-dark-secondary */
-  /* --color-background:     #17181A;   background-dark */
-   --color-background:     #141415;   /* background-dark */
-  --color-light:          #FDFEFE;   /* background-light */
-  /* --color-destructive:    #E74C3C;   same as accent/primary */
-  --color-destructive:    #C6C8CE;   /* yellow same as accent/primary */
-  --color-card-bg:        #2C2D2F;   /* surface-dark */
-  --color-card-border:    #232425;   /* closest match: slightly lighter border than card */
-  --color-inactive:       #A6A8AD;   /* text-dark-secondary */
-  --color-skeleton: #232425;
 
+  --color-accent:       #E9421E;   /* Red from logo and headings */
+  --color-secondary:    #E3C152;   /* Darker yellow for section headers */
+  --color-highlight:    #F6E1A3;   /* Light yellow highlight box */
+  --color-muted:        #8B8470;   /* Muted/sides text */
+  --color-background:   #FDF6E2;   /* Main background (beige/bone) */
+  --color-light:        #FFFFFF;   /* True white for highlights, panda, etc. */
+  --color-destructive:  #E9421E;   /* Same as accent (red) */
+  --color-card-bg:      #F6E1A3;   /* Light yellow (same as highlight, for cards) */
+  --color-card-border:  #E3C152;   /* Yellow border for boxes */
+  --color-inactive:     #ADA28E;   /* Muted inactive nav, lighter muted */
+  --color-skeleton:     #E3C152;   /* For skeleton loaders, use yellow */
+
+  
   
 
   --font-family-sans: var(--font-inter), sans-serif;
