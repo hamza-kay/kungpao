@@ -18,12 +18,15 @@ export default function ItemModal({ item, onClose }) {
 
   const addToCart = useCartStore((state) => state.addToCart);
 
-  useEffect(() => {
-    if (item?.sizes) {
-      const firstSize = Object.keys(item.sizes)[0];
-      setSelectedSize(firstSize);
-    }
-  }, [item]);
+useEffect(() => {
+  if (item?.sizes && Object.keys(item.sizes).length > 0) {
+    const firstSize = Object.keys(item.sizes)[0];
+    setSelectedSize(firstSize);
+  } else {
+    // fallback for items without sizes (e.g., Chop Suey)
+    setSelectedSize("base");
+  }
+}, [item]);
 
   // ESC key listener
   useEffect(() => {
@@ -232,15 +235,21 @@ addToCart({
                 </h4>
              <div className="divide-y divide-[var(--color-card-border)] border border-[var(--color-card-border)] rounded">
                   {Object.keys(item.variation).map((key) => {
-                    const variationData = item.variation[key];
-                    let price = 0;
+            
+  const variationData = item.variation[key];
+  let price = 0;
 
-                    if (
-                      variationData?.prices &&
-                      selectedSize &&
-                      variationData.prices[selectedSize] !== undefined
-                    ) {
-                      price = variationData.prices[selectedSize];
+  if (variationData?.prices) {
+    price =
+      (selectedSize && variationData.prices[selectedSize] !== undefined)
+        ? variationData.prices[selectedSize]
+        : (variationData.prices.base ?? 0);
+  }
+ {
+                        price =
+      (selectedSize && variationData.prices[selectedSize] !== undefined)
+        ? variationData.prices[selectedSize]
+        : (variationData.prices.base ?? 0);
                     }
 
                     return (

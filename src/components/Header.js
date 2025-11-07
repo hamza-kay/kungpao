@@ -39,11 +39,11 @@ export default function Header({ sections, restaurant }) {
       <Link href="/" className="flex items-center gap-3">
         <Image
         //  src={restaurant.logo || "/images/placeholder.jpg"}
-        src="/logo.jpg"
+        src="/logo.png"
           alt={restaurant?.title || ""}
           width={160}
           height={50}
-          className="h-[50px] w-auto object-contain rounded-md shadow-sm"
+          className="h-[50px] w-auto object-contain"
           
         />
       </Link>
