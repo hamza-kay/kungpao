@@ -9,15 +9,14 @@ export default function MenuItem({ item, onClick }) {
   const showFallback = !item.image_url || imgError;
 
   return (
-    <div
-      onClick={onClick}
-      className="
-        w-full bg-[var(--color-card-bg)] border border-[var(--color-card-border)] rounded-lg shadow-md overflow-hidden transform transition-transform duration-300 cursor-pointer
-        flex flex-row items-center gap-3 p-2 h-28
-        md:flex-col md:items-stretch md:gap-0 md:p-0 md:h-[350px]
-        md:hover:scale-105
-      "
-    >
+<div
+  onClick={onClick}
+  className="
+    w-full bg-[var(--color-accent)] text-[var(--color-text)] rounded-lg shadow-md overflow-hidden transform transition-transform duration-300 cursor-pointer
+     flex flex-row items-center gap-3 p-2 h-28
+     md:flex-col md:items-stretch md:gap-0 md:p-0 md:h-[350px]
+     md:hover:scale-105"
+ >
       {/* IMAGE */}
 <div
   className="
@@ -59,11 +58,11 @@ export default function MenuItem({ item, onClick }) {
 
       {/* CONTENT */}
       <div className="flex-1 px-1 md:px-6 md:pt-6 md:pb-6">
-        <h3 className="!font-bold text-[var(--color-light)] line-clamp-1 text-base md:text-xl">
+        <h3 className="!font-bold text-[var(--color-text)] line-clamp-1 text-base md:text-xl">
           {item.name}
         </h3>
 
-        <p className="text-[var(--color-muted)] mt-1 md:mt-2 line-clamp-1 text-xs md:text-sm">
+        <p className="text-[var(--color-text)] mt-1 md:mt-2 line-clamp-1 text-xs md:text-sm">
           {item.description}
         </p>
 
@@ -73,7 +72,7 @@ export default function MenuItem({ item, onClick }) {
           </p>
         )}
 
-        <p className="font-bold mt-1 md:mt-4 text-[15px] md:text-lg text-accent md:text-accent">
+        <p className="font-bold mt-1 md:mt-4 text-[15px] md:text-lg text-[var(--color-primary)]">
           £{(item.price || Object.values(item.sizes || {})[0] || 0).toFixed(2)}
         </p>
       </div>

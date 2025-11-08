@@ -18,6 +18,8 @@ export default function ItemModal({ item, onClose }) {
 
   const addToCart = useCartStore((state) => state.addToCart);
 
+
+
 useEffect(() => {
   if (item?.sizes && Object.keys(item.sizes).length > 0) {
     const firstSize = Object.keys(item.sizes)[0];
@@ -160,14 +162,14 @@ addToCart({
 
           {/* Content */}
           <div className="p-6">
-       <h1 className="text-xl font-bold text-[var(--color-light)]">{item.name}</h1>
+<h1 className="text-xl font-bold text-[var(--color-text)]">{item.name}</h1>
 
             {item.price && (
-        <p className="mt-2 text-lg font-semibold text-[var(--color-accent)]">£{Number(item.price).toFixed(2)}</p>
+        <p className="mt-2 text-lg font-semibold text-[var(--color-primary)]">£{Number(item.price).toFixed(2)}</p>
             )}
 
             {item.description && (
-          <p className="mt-4 text-sm text-[var(--color-muted)]">{item.description}</p>
+          <p className="mt-4 text-sm text-[var(--color-text)]">{item.description}</p>
             )}
 
             {/* Quantity Controls */}
@@ -176,18 +178,18 @@ addToCart({
   <Button
     size="icon"
     variant="outline"
-     className="w-8 h-8 p-0 bg-[var(--color-card-bg)] border border-[var(--color-card-border)] text-[var(--color-light)] hover:bg-[var(--color-card-border)]"
+     className="w-8 h-8 p-0 bg-[var(--color-card-bg)] border border-[var(--color-card-border)] text-[var(--color-text)] hover:bg-[var(--color-card-border)]"
     onClick={() => setQuantity(Math.max(1, quantity - 1))}
   >
     −
   </Button>
-  <span className="text-base font-semibold w-6 text-center text-[var(--color-light)]">
+  <span className="text-base font-semibold w-6 text-center text-[var(--color-text)]">
     {quantity}
   </span>
   <Button
     size="icon"
     variant="outline"
-     className="w-8 h-8 p-0 bg-[var(--color-card-bg)] border border-[var(--color-card-border)] text-[var(--color-light)] hover:bg-[var(--color-card-border)]"
+     className="w-8 h-8 p-0 bg-[var(--color-card-bg)] border border-[var(--color-card-border)] text-[var(--color-text)] hover:bg-[var(--color-card-border)]"
     onClick={() => setQuantity(quantity + 1)}
   >
     +
@@ -198,14 +200,14 @@ addToCart({
             {/* Sizes */}
             {item.sizes && (
               <div className="mt-8">
-               <h4 className="text-sm font-semibold text-[var(--color-light)] mb-2">
+               <h4 className="text-sm font-semibold text-[var(--color-text)] mb-2">
                   Choose Size
                 </h4>
                 <div className="divide-y divide-[var(--color-card-border)] border rounded">
                   {Object.keys(item.sizes).map((size) => (
                     <label
                       key={size}
-                      className="flex justify-between items-center text-sm py-3 px-3 cursor-pointer hover:bg-gray-50 transition"
+                      className="flex justify-between items-center text-sm py-3 px-3 cursor-pointer hover:bg-[var(--color-card-border)] transition"
                     >
                       <div className="flex items-center gap-3">
                         <input
@@ -214,11 +216,11 @@ addToCart({
                           value={size}
                           checked={selectedSize === size}
                           onChange={() => setSelectedSize(size)}
-                          className="accent-accent w-5 h-5 border-gray-300 rounded"
+                          className="accent-[var(--color-primary)] w-5 h-5 border-[var(--color-card-border)] rounded"
                         />
-                         <span className="text-[var(--color-light)]">{size}”</span>
+                       <span className="text-[var(--color-text)]">{size}”</span>
                       </div>
-                      <span className="text-[var(--color-muted)] text-sm">
+                      <span className="text-[var(--color-text)] text-sm">
                         £{item.sizes?.[size].toFixed(2)}
                       </span>
                     </label>
@@ -230,13 +232,12 @@ addToCart({
             {/* Variations */}
             {item.variation && Object.keys(item.variation).length > 0 && (
               <div className="mt-8">
-                <h4 className="text-sm font-semibold text-gray-700 mb-2">
+                <h4 className="text-sm font-semibold text-[var(--color-text)] mb-2">
                   Choose Variation
                 </h4>
              <div className="divide-y divide-[var(--color-card-border)] border border-[var(--color-card-border)] rounded">
                   {Object.keys(item.variation).map((key) => {
-            
-  const variationData = item.variation[key];
+      const variationData = item.variation[key];
   let price = 0;
 
   if (variationData?.prices) {
@@ -255,7 +256,7 @@ addToCart({
                     return (
                       <label
                         key={key}
-                        className="flex justify-between items-center text-sm py-3 px-3 cursor-pointer hover:bg-gray-50 transition"
+                        className="flex justify-between items-center text-sm py-3 px-3 cursor-pointer hover:bg-[var(--color-card-border)] transition"
                       >
                         <div className="flex items-center gap-3">
                           <input
@@ -264,13 +265,13 @@ addToCart({
                             value={key}
                             checked={selectedVariation === key}
                             onChange={() => setSelectedVariation(key)}
-                            className="accent-[var(--color-accent)] w-5 h-5 border-[var(--color-card-border)] rounded"
+                            className="accent-[var(--color-primary)] w-5 h-5 border-[var(--color-card-border)] rounded"
                           />
-                          <span className="text-gray-900">
+                          <span className="text-[var(--color-text)]">
                             {variationData.name}
                           </span>
                         </div>
-                        <span className="text-gray-500 text-sm">
+                        <span className="text-[var(--color-text)] text-sm">
                           {price > 0 ? `+£${price.toFixed(2)}` : "+£0.00"}
                         </span>
                       </label>
@@ -283,7 +284,7 @@ addToCart({
             {/* Add-ons */}
             {item.addons && Object.keys(item.addons).length > 0 && (
               <div className="mt-8">
-                <h4 className="text-sm font-semibold text-gray-700 mb-2">
+                <h4 className="text-sm font-semibold text-[var(--color-text)] mb-2">
                   Add-ons
                 </h4>
                 <div className="divide-y divide-[var(--color-card-border)] border rounded">
@@ -299,20 +300,20 @@ addToCart({
                     return (
                       <label
                         key={addonName}
-                        className="flex justify-between items-center text-sm py-3 px-3 cursor-pointer hover:bg-gray-50 transition"
+                        className="flex justify-between items-center text-sm py-3 px-3 cursor-pointer hover:bg-[var(--color-card-border)] transition"
                       >
                         <div className="flex items-center gap-3">
                           <input
                             type="checkbox"
                             checked={selectedAddons.includes(addonName)}
                             onChange={() => toggleAddon(addonName)}
-                            className="accent-accent w-5 h-5 border-gray-300 rounded"
+                            className="accent-[var(--color-primary)] w-5 h-5 border-[var(--color-card-border)] rounded"
                           />
-                          <span className="text-gray-900">
+                         <span className="text-[var(--color-text)]">
                             {addonName}
                           </span>
                         </div>
-                        <span className="text-gray-500 text-sm">
+                       <span className="text-[var(--color-text)] text-sm">
                           +£{Number(price || 0).toFixed(2)}
                         </span>
                       </label>
@@ -329,13 +330,14 @@ addToCart({
           <div className="flex items-center justify-between bg-[var(--color-card-bg)] backdrop-blur border-t px-4 py-3">
     <button
   onClick={onClose}
-    className="text-[var(--color-accent)] hover:text-[var(--color-secondary)] text-xl font-bold px-3 py-1 rounded-md bg-[var(--color-card-bg)] hover:bg-[var(--color-card-border)] transition">
+   className="text-[var(--color-text)] text-xl font-bold px-3 py-1 rounded-md
++              bg-[var(--color-primary)]hover:bg-[var(--color-secondary)] transition ">
   ×
 </button>
 <Button
   onClick={handleAdd}
   disabled={item.variation && Object.keys(item.variation).length > 0 && !selectedVariation}
- className="bg-[var(--color-accent)] hover:bg-[var(--color-secondary)] text-white font-semibold flex-grow ml-4 py-3 rounded transition text-base disabled:opacity-50 disabled:cursor-not-allowed"
+ className="bg-[var(--color-primary)] hover:bg-[var(--color-secondary)] text-[var(--color-text)] font-semibold flex-grow ml-4 py-3 rounded transition text-base disabled:opacity-50 disabled:cursor-not-allowed"
 >
   Add to order £{totalPrice}
 </Button>

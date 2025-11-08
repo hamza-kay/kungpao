@@ -36,15 +36,15 @@ export default function CartForm() {
   }, [watch, setCustomer]);
 
   return (
-    <Card className="bg-[var(--color-card-bg)] border border-[var(--color-card-border)]">
+   <Card className="bg-[var(--color-background)] border border-[var(--color-card-border)] shadow-md">
       <CardHeader>
-        <CardTitle className="text-[var(--color-light)]">Personal Details</CardTitle>
+        <CardTitle className="text-[var(--color-text)]">Personal Details</CardTitle>
       </CardHeader>
       <CardContent className="space-y-6">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           <div>
             <Input placeholder="First Name" {...register("firstName")}
-             className="bg-[var(--color-card-bg)] border border-[var(--color-card-border)] text-[var(--color-light)] placeholder:text-[var(--color-muted)] focus:border-[var(--color-accent)] focus:ring-[var(--color-accent)]" />
+            className="bg-white border border-[var(--color-card-border)] text-[var(--color-text)] placeholder:text-[var(--color-muted)] focus:border-[var(--color-accent)] focus:ring-[var(--color-accent)]" />
             <div className="h-5">
               {errors.firstName && (
                 <p className="text-sm text-[var(--color-accent)]">{errors.firstName.message}</p>
@@ -53,7 +53,7 @@ export default function CartForm() {
           </div>
           <div>
             <Input placeholder="Last Name" {...register("lastName")} 
-            className="bg-[var(--color-card-bg)] border border-[var(--color-card-border)] text-[var(--color-light)] placeholder:text-[var(--color-muted)] focus:border-[var(--color-accent)] focus:ring-[var(--color-accent)]"/>
+            className="bg-white border border-[var(--color-card-border)] text-[var(--color-text)] placeholder:text-[var(--color-muted)] focus:border-[var(--color-accent)] focus:ring-[var(--color-accent)]"/>
             <div className="h-5">
               {errors.lastName && (
                 <p className="text-sm text-[var(--color-accent)]">{errors.lastName.message}</p>
@@ -64,7 +64,7 @@ export default function CartForm() {
 
         <div>
           <Input placeholder="Email Address" {...register("email")}
-           className="bg-[var(--color-card-bg)] border border-[var(--color-card-border)] text-[var(--color-light)] placeholder:text-[var(--color-muted)] focus:border-[var(--color-accent)] focus:ring-[var(--color-accent)]" />
+          className="bg-white border border-[var(--color-card-border)] text-[var(--color-text)] placeholder:text-[var(--color-muted)] focus:border-[var(--color-accent)] focus:ring-[var(--color-accent)]" />
           <div className="h-5">
             {errors.email && (
               <p className="text-sm text-[var(--color-accent)]">{errors.email.message}</p>
@@ -74,7 +74,7 @@ export default function CartForm() {
 
         <div>
           <Input placeholder="Phone Number" {...register("phoneNumber")}
-           className="bg-[var(--color-card-bg)] border border-[var(--color-card-border)] text-[var(--color-light)] placeholder:text-[var(--color-muted)] focus:border-[var(--color-accent)] focus:ring-[var(--color-accent)]" />
+          className="bg-white border border-[var(--color-card-border)] text-[var(--color-text)] placeholder:text-[var(--color-muted)] focus:border-[var(--color-accent)] focus:ring-[var(--color-accent)]" />
           <div className="h-5">
             {errors.phoneNumber && (
               <p className="text-sm text-[var(--color-accent)]">{errors.phoneNumber.message}</p>
@@ -82,7 +82,7 @@ export default function CartForm() {
           </div>
         </div>
 
-        <CardTitle className="mt-8 text-[var(--color-light)]">Delivery Details</CardTitle>
+        <CardTitle className="mt-8 text-[var(--color-text)]">Delivery Details</CardTitle>
 
         <div className="flex gap-2 mt-2">
           <Button
@@ -137,7 +137,7 @@ export default function CartForm() {
         >
           <div>
             <Input placeholder="Street Address" {...register("deliveryAddress")}
-             className="bg-[var(--color-card-bg)] border border-[var(--color-card-border)] text-[var(--color-light)] placeholder:text-[var(--color-muted)] focus:border-[var(--color-accent)] focus:ring-[var(--color-accent)]"
+             className="bg-white border border-[var(--color-card-border)] text-[var(--color-text)] placeholder:text-[var(--color-muted)] focus:border-[var(--color-accent)] focus:ring-[var(--color-accent)]"
              />
             <div className="h-5">
               {errors.deliveryAddress && (
@@ -150,7 +150,7 @@ export default function CartForm() {
             <Input
               placeholder="Apartment or building name (optional)"
               {...register("apartment")}
-               className="bg-[var(--color-card-bg)] border border-[var(--color-card-border)] text-[var(--color-light)] placeholder:text-[var(--color-muted)] focus:border-[var(--color-accent)] focus:ring-[var(--color-accent)]"
+               className="bg-white border border-[var(--color-card-border)] text-[var(--color-text)] placeholder:text-[var(--color-muted)] focus:border-[var(--color-accent)] focus:ring-[var(--color-accent)]"
             />
             <div className="h-5" />
           </div>
@@ -158,7 +158,7 @@ export default function CartForm() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             <div>
               <Input placeholder="Postcode" {...register("postcode")} 
-               className="bg-[var(--color-card-bg)] border border-[var(--color-card-border)] text-[var(--color-light)] placeholder:text-[var(--color-muted)] focus:border-[var(--color-accent)] focus:ring-[var(--color-accent)]"/>
+               className="bg-white border border-[var(--color-card-border)] text-[var(--color-text)] placeholder:text-[var(--color-muted)] focus:border-[var(--color-accent)] focus:ring-[var(--color-accent)]"/>
               <div className="h-5">
                 {errors.postcode && (
                   <p className="text-sm text-[var(--color-accent)]">{errors.postcode.message}</p>
@@ -167,7 +167,7 @@ export default function CartForm() {
             </div>
             <div>
               <Input placeholder="City" {...register("city")}
-               className="bg-[var(--color-card-bg)] border border-[var(--color-card-border)] text-[var(--color-light)] placeholder:text-[var(--color-muted)] focus:border-[var(--color-accent)] focus:ring-[var(--color-accent)]" />
+              className="bg-white border border-[var(--color-card-border)] text-[var(--color-text)] placeholder:text-[var(--color-muted)] focus:border-[var(--color-accent)] focus:ring-[var(--color-accent)]" />
               <div className="h-5">
                 {errors.city && (
                   <p className="text-sm text-[var(--color-accent)]">{errors.city.message}</p>
@@ -179,7 +179,7 @@ export default function CartForm() {
 
         <div>
           <Input placeholder="Additional notes (optional)" {...register("notes")} 
-           className="bg-[var(--color-card-bg)] border border-[var(--color-card-border)] text-[var(--color-light)] placeholder:text-[var(--color-muted)] focus:border-[var(--color-accent)] focus:ring-[var(--color-accent)]"/>
+           className="bg-white border border-[var(--color-card-border)] text-[var(--color-text)] placeholder:text-[var(--color-muted)] focus:border-[var(--color-accent)] focus:ring-[var(--color-accent)]"/>
           <div className="h-5" />
         </div>
       </CardContent>

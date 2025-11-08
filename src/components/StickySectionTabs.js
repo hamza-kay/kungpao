@@ -67,19 +67,15 @@ export default function StickySectionTabs({ sections }) {
             userSelect: "none",
           }}
         >
-<div className="shrink-0 lg:w-115 xl:w-40" aria-hidden="true" />
+<div className="shrink-0 lg:w-115 xl:w-95" aria-hidden="true" />
           
           {sections.map((section) => (
             <button
               key={section.id}
               onClick={() => handleClick(section.id)}
-              className={`px-3 py-2 transition whitespace-nowrap
-                font-semibold tracking-normal
-                text-sm sm:text-base
-                ${activeSection === section.id
-                  ? "text-accent"
-                   : "text-muted hover:text-accent"
-                }`}
+           className={`px-3 py-2 whitespace-nowrap sticky-tab ${
+  activeSection === section.id ? "active" : ""
+}`}
             >
               {section.title}
             </button>

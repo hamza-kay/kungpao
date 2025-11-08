@@ -262,10 +262,10 @@ const labelWithUpcharge = (it) => {
 </div>
 
           <div className="p-6">
-             <h1 className="text-xl font-bold text-[var(--color-light)]">{mealItem.name}</h1>
-            <p className="mt-2 text-lg font-semibold text-[var(--color-accent)]">£{totalEach}</p>
+             <h1 className="text-xl font-bold text-[var(--color-text)]">{mealItem.name}</h1>
+            <p className="mt-2 text-lg font-semibold text-[var(--color-primary)]">£{totalEach}</p>
             {mealItem.description && (
-              <p className="mt-4 text-sm text-[var(--color-muted)]">
+              <p className="mt-4 text-sm text-[var(--color-text)]">
                 {mealItem.description}
               </p>
             )}
@@ -277,9 +277,9 @@ const labelWithUpcharge = (it) => {
                     type="checkbox"
                     checked={isMeal}
                     onChange={(e) => setIsMeal(e.target.checked)}
-                    className="accent-[var(--color-accent)] w-5 h-5 border-[var(--color-card-border)] rounded"
+                    className="accent-[var(--color-primary)] w-5 h-5 border-[var(--color-card-border)] rounded"
                   />
-                  <span className="text-[var(--color-light)]">Make it a meal (+£{mealDelta.toFixed(2)})</span>
+                  <span className="text-[var(--color-text)]">Go Large (+£{mealDelta.toFixed(2)})</span>
                 </label>
               </div>
             )}
@@ -293,11 +293,11 @@ const labelWithUpcharge = (it) => {
 
               return (
                 <div key={req.key} className="mt-8">
-                  <h4 className="text-sm font-semibold text-[var(--color-light)] mb-2">
+                  <h4 className="text-sm font-semibold text-[var(--color-text)] mb-2">
                     {req.displayName}
                   </h4>
                   {matchingItems.length === 1 ? (
-                    <p className="text-sm text-[var(--color-light)] mb-4"> {labelWithUpcharge(matchingItems[0])}</p>
+                    <p className="text-sm text-[var(--color-text)] mb-4"> {labelWithUpcharge(matchingItems[0])}</p>
                   ) : (
                     <div className="mb-4">
                       <select
@@ -305,9 +305,14 @@ const labelWithUpcharge = (it) => {
                         onChange={(e) =>
                           handleItemChange(req.key, "selectedItemId", Number(e.target.value))
                         }
-                        className="w-full border rounded px-3 py-2 text-sm text-[var(--color-muted)]"
+                        className="w-full rounded px-3 py-2 text-sm
++            bg-[var(--color-card-bg)]
++            border border-[var(--color-card-border)]
++            text-[var(--color-text)]
++            focus:border-[var(--color-primary)]
++            focus:ring-[var(--color-primary)]"
                       >
-                        <option value="">Select {req.name}</option>
+                        <option className="text-[var(--color-text)]" value="">Select {req.name}</option>
                         {matchingItems.map((item) => (
                           <option key={item.id} value={item.id}>
                              {labelWithUpcharge(item)}
@@ -329,18 +334,18 @@ const labelWithUpcharge = (it) => {
                 <Button
                   size="icon"
                   variant="outline"
-                  className="w-8 h-8 p-0 bg-[var(--color-card-bg)] hover:bg-[var(--color-card-border)] text-[var(--color-light)] border border-[var(--color-card-border)]"
+                  className="w-8 h-8 p-0 bg-[var(--color-card-bg)] hover:bg-[var(--color-card-border)] text-[var(--color-text)] border border-[var(--color-card-border)]"
                   onClick={() => setQuantity(Math.max(1, quantity - 1))}
                 >
                   −
                 </Button>
-                <span className="text-base font-semibold w-6 text-center text-[var(--color-light)]">
+                <span className="text-base font-semibold w-6 text-center text-[var(--color-text)]">
                   {quantity}
                 </span>
                 <Button
                   size="icon"
                   variant="outline"
-                  className="w-8 h-8 p-0 bg-[var(--color-card-bg)] hover:bg-[var(--color-card-border)] text-[var(--color-light)] border border-[var(--color-card-border)]"
+                  className="w-8 h-8 p-0 bg-[var(--color-card-bg)] hover:bg-[var(--color-card-border)] text-[var(--color-text)] border border-[var(--color-card-border)]"
                   onClick={() => setQuantity(quantity + 1)}
                 >
                   +
@@ -354,13 +359,14 @@ const labelWithUpcharge = (it) => {
           <div className="flex items-center justify-between bg-[var(--color-card-bg)] backdrop-blur border-t px-4 py-3">
             <button
               onClick={onClose}
-              className="text-[var(--color-accent)] hover:text-[var(--color-secondary)] text-xl font-bold px-3 py-1 rounded-md bg-[var(--color-card-bg)] hover:bg-[var(--color-card-border)] transition"
+              className="text-[var(--color-text)] text-xl font-bold px-3 py-1 rounded-md
+        ] transition"
             >
               ×
             </button>
             <Button
               onClick={handleAddToCart}
-              className="bg-[var(--color-accent)] hover:bg-[var(--color-secondary)] text-white font-semibold flex-grow ml-4 py-3 rounded transition text-base"
+              className="bg-[var(--color-primary)] hover:bg-[var(--color-secondary)] text-white font-semibold flex-grow ml-4 py-3 rounded transition text-base"
             >
               Add to Order £{totalEach}
             </Button>

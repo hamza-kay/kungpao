@@ -1,4 +1,4 @@
-import { Inter, Bebas_Neue} from "next/font/google";
+import { Inter, Luckiest_Guy} from "next/font/google";
 import ClientLayout from "@/components/ClientLayout";
 import "@/styles/globals.css";
 
@@ -11,15 +11,15 @@ const inter = Inter({
   weight: ["400", "500", "600", "700", "800", "900"], // match exactly
 });
 
-const bebas = Bebas_Neue({
+const luckiestGuy = Luckiest_Guy({
   weight: "400",
   subsets: ["latin"],
-  variable: "--font-display",
+  variable: "--font-luckiest",
   display: "swap",
 });
 
 export const metadata = {
-  title: "Smash Bro's Kitchen",
+  title: "Kung Pao Panda",
 };
 
 export const viewport = {
@@ -30,7 +30,7 @@ export const viewport = {
 
 export default function RootLayout({ children }) {
   return (
-     <html lang="en" className={`${inter.variable} ${bebas.variable}`}>
+     <html lang="en" className={`${inter.variable} ${luckiestGuy.variable}`}>
           <head>
         {/* Material Icons webfont */}
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />

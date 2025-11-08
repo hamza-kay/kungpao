@@ -93,8 +93,7 @@ return (
 <h2
   id={`section-${section.sectionId}`}
   data-section-id={section.sectionId}
- className="text-2xl !font-bold tracking-tight text-accent mb-8"
->
+  className="heading-display text-2xl mb-8 ">
   {section.sectionTitle}
 </h2>
 

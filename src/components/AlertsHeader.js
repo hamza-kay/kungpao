@@ -57,7 +57,15 @@ return (
 <div className="w-full  py-8">
   <div className="max-w-7xl mx-auto px-4">
 
-    <div className="bg-[var(--color-card-bg)] border border-[var(--color-card-border)] shadow-lg rounded-lg overflow-hidden md:flex">
+     <div
+className="bg-white border border-[var(--color-card-border)] shadow-lg rounded-lg overflow-hidden md:flex"
+   style={{
+     backgroundImage:
+       'url("https://www.transparenttextures.com/patterns/subtle-grunge.png")',
+     backgroundRepeat: "repeat",
+     backgroundSize: "auto",
+   }}
+ >
 
 
 
@@ -76,9 +84,11 @@ return (
 
       {/* Right Content */}
       <div className="p-8">
-        <div className="uppercase tracking-wide text-sm text-accent font-semibold">
+        <div
+         className="heading-display uppercase text-lg !text-[var(--color-primary)] ">
           {restaurant.title}
         </div>
+        
 
         <div className="mt-2 flex items-center gap-2">
           <span
