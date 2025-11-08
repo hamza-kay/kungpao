@@ -87,11 +87,11 @@ export default function CartForm() {
         <div className="flex gap-2 mt-2">
           <Button
             className={clsx(
-              "flex items-center gap-2 px-4 py-2 rounded text-sm font-medium border border-[var(--color-accent)] transition-colors",
-              fulfillmentType === "DELIVERY"
-                ? "bg-[var(--color-accent)] text-white hover:bg-[var(--color-secondary)]"
-                : "bg-[var(--color-card-bg)] text-[var(--color-accent)] hover:bg-[var(--color-card-border)]"
-            )}
+       +   "flex items-center gap-2 px-4 py-2 rounded text-sm font-medium border border-[var(--color-primary)] transition-colors",
+   fulfillmentType === "DELIVERY"
+     ? "bg-[var(--color-primary)] text-[var(--color-text)] hover:bg-[var(--color-secondary)]"
+     : "bg-[var(--color-card-bg)] text-[var(--color-primary)] hover:bg-[var(--color-card-border)]"
+  )}
             type="button"
             onClick={() => setValue("fulfillmentType", "DELIVERY")}
           >
@@ -100,11 +100,11 @@ export default function CartForm() {
           </Button>
           <Button
             className={clsx(
-              "flex items-center gap-2 px-4 py-2 rounded text-sm font-medium border border-[var(--color-accent)] transition-colors",
-              fulfillmentType === "PICKUP"
-                ? "bg-[var(--color-accent)] text-white hover:bg-[var(--color-secondary)]"
-                : "bg-[var(--color-card-bg)] text-[var(--color-accent)] hover:bg-[var(--color-card-border)]"
-            )}
+        "flex items-center gap-2 px-4 py-2 rounded text-sm font-medium border border-[var(--color-primary)] transition-colors",
+   fulfillmentType === "PICKUP"
+    ? "bg-[var(--color-primary)] text-[var(--color-text)] hover:bg-[var(--color-secondary)]"
+     : "bg-[var(--color-card-bg)] text-[var(--color-primary)] hover:bg-[var(--color-card-border)]"
+  )}
             type="button"
             onClick={() => setValue("fulfillmentType", "PICKUP")}
           >
