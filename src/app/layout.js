@@ -20,6 +20,10 @@ const luckiestGuy = Luckiest_Guy({
 
 export const metadata = {
   title: "Kung Pao Panda",
+  description: "Authentic Chinese Food",
+  icons: {
+    icon: "/panda.png", // <- path to your new file
+  },
 };
 
 export const viewport = {
