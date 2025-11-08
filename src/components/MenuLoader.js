@@ -92,7 +92,7 @@ return (
       >
 <h2
   id={`section-${section.sectionId}`}
-  data-section-id={section.sectionId}
+ data-section-id={String(section.sectionId)}
   className="heading-display text-2xl mb-8 ">
   {section.sectionTitle}
 </h2>
