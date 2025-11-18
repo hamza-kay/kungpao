@@ -52,7 +52,7 @@ if (isLoadingRestaurant || isLoadingSections) {
       </p>
     </div>
   );
-}
+}   
 
 //   return (
 // <>
