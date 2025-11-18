@@ -41,17 +41,29 @@ if (isLoadingRestaurant || isLoadingSections) {
   if (isError) {
     return <div>Error loading sections.</div>;
   }
-
-  return (
-<>
-
-
-  <Header sections={sections} restaurant={restaurantData} />
-  <MobileCartBar />
-  <main className="max-w-7xl mx-auto py-6">
-    <MenuLoader sections={sections} />
-  </main>
-</>
-
+  
+    return (
+    <div className="flex flex-col items-center justify-center min-h-screen text-center px-6">
+      <h1 className="text-4xl font-bold mb-4 text-[var(--color-accent)]">
+        🚧 Under Construction
+      </h1>
+      <p className="text-lg text-[var(--color-light)]">
+        Our online ordering is currently being updated.
+      </p>
+    </div>
   );
 }
+
+//   return (
+// <>
+
+
+//   <Header sections={sections} restaurant={restaurantData} />
+//   <MobileCartBar />
+//   <main className="max-w-7xl mx-auto py-6">
+//     <MenuLoader sections={sections} />
+//   </main>
+// </>
+
+//   );
+// }
