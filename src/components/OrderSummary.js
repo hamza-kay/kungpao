@@ -26,7 +26,9 @@ const { appId } = useContext(AppIdContext);
 
   const cartItems = useCartStore((state) => state.cartItems);
   const totalPrice = useCartStore((state) => state.totalPrice("other"));
-  const serviceFee = parseFloat((totalPrice * 0.05).toFixed(2));
+  const backendTotalPence = Math.round(totalPrice * 1.05 * 100);
+  const backendTotal = backendTotalPence / 100;
+  const serviceFee = backendTotal - totalPrice;
   const increaseQuantity = useCartStore((state) => state.increaseQuantity);
   const decreaseQuantity = useCartStore((state) => state.decreaseQuantity);
   const removeFromCart = useCartStore((state) => state.removeFromCart);
@@ -274,7 +276,7 @@ const { appId } = useContext(AppIdContext);
 
      <div className="flex justify-between text-lg font-bold">
   <span className="text-[var(--color-text)]">Total</span>
-  <span className="text-[var(--color-text)]">£{(totalPrice + serviceFee).toFixed(2)}</span>
+  <span className="text-[var(--color-text)]">£{backendTotal.toFixed(2)}</span>
 </div>
 
 
